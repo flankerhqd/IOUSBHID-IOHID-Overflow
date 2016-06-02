@@ -1,0 +1,175 @@
+Anonymous UUID:       FF5B554D-3E1C-377B-C7DA-950967B91877
+
+Thu Apr  7 21:34:31 2016
+
+*** Panic Report ***
+panic(cpu 1 caller 0xffffff800af85b8f): "vm_page_check_pageable_safe: trying to add page" "from compressor object (0xffffff800b6c35f0) to pageable queue"@/Library/Caches/com.apple.xbs/Sources/xnu/xnu-3248.40.184/osfmk/vm/vm_resident.c:7076
+Backtrace (CPU 1), Frame : Return Address
+0xffffff911638b230 : 0xffffff800aedab12 mach_kernel : _panic + 0xe2
+0xffffff911638b2b0 : 0xffffff800af85b8f mach_kernel : _vm_page_check_pageable_safe + 0x3f
+0xffffff911638b2d0 : 0xffffff800af4a8e3 mach_kernel : _vm_fault_enter + 0x9b3
+0xffffff911638b450 : 0xffffff800af4e80b mach_kernel : _vm_page_validate_cs_mapped_chunk + 0x226b
+0xffffff911638b670 : 0xffffff800afcdf6d mach_kernel : _kernel_trap + 0x47d
+0xffffff911638b850 : 0xffffff800afec273 mach_kernel : _return_from_trap + 0xe3
+0xffffff911638b870 : 0xffffff7f8bd4c283 com.apple.iokit.IOHIDFamily : __ZN11IOHIDDevice20handleReportWithTimeEyP18IOMemoryDescriptor15IOHIDReportTypej + 0x191
+0xffffff911638b9f0 : 0xffffff7f8bd4ad45 com.apple.iokit.IOHIDFamily : __ZN11IOHIDDevice12handleReportEP18IOMemoryDescriptor15IOHIDReportTypej + 0x5b
+0xffffff911638ba30 : 0xffffff7f8bd486b2 com.apple.iokit.IOHIDFamily : __ZN18IOHIDLibUserClient9getReportEP18IOMemoryDescriptorPj15IOHIDReportTypejjP15IOHIDCompletion + 0x12c
+0xffffff911638ba80 : 0xffffff7f8bd4877b com.apple.iokit.IOHIDFamily : __ZN18IOHIDLibUserClient9getReportEPvPj15IOHIDReportTypejjP15IOHIDCompletion + 0x99
+0xffffff911638bad0 : 0xffffff7f8bd46c3b com.apple.iokit.IOHIDFamily : __ZN18IOHIDLibUserClient10_getReportEPS_PvP25IOExternalMethodArguments + 0x13b
+0xffffff911638bb30 : 0xffffff800b4b5958 mach_kernel : __ZN13IOCommandGate9runActionEPFiP8OSObjectPvS2_S2_S2_ES2_S2_S2_S2_ + 0x1a8
+0xffffff911638bba0 : 0xffffff7f8bd47556 com.apple.iokit.IOHIDFamily : __ZN18IOHIDLibUserClient14externalMethodEjP25IOExternalMethodArgumentsP24IOExternalMethodDispatchP8OSObjectPv + 0x64
+0xffffff911638bbe0 : 0xffffff800b4df277 mach_kernel : _is_io_connect_method + 0x1e7
+0xffffff911638bd20 : 0xffffff800af97cc0 mach_kernel : _iokit_server + 0x5bd0
+0xffffff911638be30 : 0xffffff800aedf283 mach_kernel : _ipc_kobject_server + 0x103
+0xffffff911638be60 : 0xffffff800aec28b8 mach_kernel : _ipc_kmsg_send + 0xb8
+0xffffff911638bea0 : 0xffffff800aed2665 mach_kernel : _mach_msg_overwrite_trap + 0xc5
+0xffffff911638bf10 : 0xffffff800afb8bda mach_kernel : _mach_call_munger64 + 0x19a
+0xffffff911638bfb0 : 0xffffff800afeca96 mach_kernel : _hndl_mach_scall64 + 0x16
+      Kernel Extensions in backtrace:
+         com.apple.iokit.IOHIDFamily(2.0)[8D04EA14-CDE1-3B41-8571-153FF3F3F63B]@0xffffff7f8bd46000->0xffffff7f8bdbdfff
+            dependency: com.apple.driver.AppleFDEKeyStore(28.30)[C31A19C9-8174-3E35-B2CD-3B1B237C0220]@0xffffff7f8bd3b000
+
+BSD process name corresponding to current thread: Python
+Boot args: keepsyms=1 debug=0x146 kext-dev-mode=1 kdp_match_name=firewire -v pmuflags=1 fwkdp=0x8000
+
+Mac OS version:
+15E65
+
+Kernel version:
+Darwin Kernel Version 15.4.0: Fri Feb 26 22:08:05 PST 2016; root:xnu-3248.40.184~3/RELEASE_X86_64
+Kernel UUID: 4E7B4496-0B81-34E9-97AF-F316103B0839
+Kernel slide:     0x000000000ac00000
+Kernel text base: 0xffffff800ae00000
+__HIB  text base: 0xffffff800ad00000
+System model name: MacBookAir6,2 (Mac-7DF21CB3ED6977E5)
+
+System uptime in nanoseconds: 68823471728
+last loaded kext at 5908667167: com.apple.filesystems.autofs	3.0 (addr 0xffffff7f8cddf000, size 45056)
+loaded kexts:
+com.apple.filesystems.autofs	3.0
+com.apple.driver.AudioAUUC	1.70
+com.apple.driver.AGPM	110.21.18
+com.apple.driver.ApplePlatformEnabler	2.6.0d0
+com.apple.driver.X86PlatformShim	1.0.0
+com.apple.driver.AppleHDAHardwareConfigDriver	274.7
+com.apple.driver.AppleGraphicsDevicePolicy	3.7.7
+com.apple.driver.AppleHDA	274.7
+com.apple.driver.AppleUpstreamUserClient	3.6.1
+com.apple.driver.AppleOSXWatchdog	1
+com.apple.driver.pmtelemetry	1
+com.apple.iokit.IOUserEthernet	1.0.1
+com.apple.iokit.IOBluetoothSerialManager	4.4.4f4
+com.apple.Dont_Steal_Mac_OS_X	7.0.0
+com.apple.driver.AppleHV	1
+com.apple.driver.AppleMuxControl	3.12.6
+com.apple.driver.AppleIntelHD5000Graphics	10.1.4
+com.apple.driver.AppleIntelFramebufferAzul	10.1.4
+com.apple.driver.AppleLPC	3.1
+com.apple.driver.AppleSMCLMU	208
+com.apple.driver.ACPI_SMC_PlatformPlugin	1.0.0
+com.apple.iokit.BroadcomBluetoothHostControllerUSBTransport	4.4.4f4
+com.apple.driver.AppleCameraInterface	5.46.0
+com.apple.driver.AppleIntelSlowAdaptiveClocking	4.0.0
+com.apple.driver.AppleFIVRDriver	4.1.0
+com.apple.driver.AppleBacklight	170.8.9
+com.apple.driver.AppleMCCSControl	1.2.13
+com.apple.iokit.SCSITaskUserClient	3.7.7
+com.apple.iokit.IOBluetoothUSBDFU	4.4.4f4
+com.apple.driver.AppleUSBStorageCoexistentDriver	3.7.1
+com.apple.driver.AppleUSBCardReader	3.7.1
+com.apple.driver.AppleFileSystemDriver	3.0.1
+com.apple.driver.CoreStorageFsck	517.20.1
+com.apple.AppleFSCompression.AppleFSCompressionTypeDataless	1.0.0d1
+com.apple.AppleFSCompression.AppleFSCompressionTypeZlib	1.0.0
+com.apple.BootCache	38
+com.apple.driver.AppleTopCaseHIDEventDriver	86
+com.apple.iokit.IOAHCIBlockStorage	2.8.5
+com.apple.driver.AppleAHCIPort	3.1.8
+com.apple.driver.AirPort.Brcm4360	1040.1.1a6
+com.apple.driver.AppleSmartBatteryManager	161.0.0
+com.apple.driver.AppleACPIButtons	4.0
+com.apple.driver.AppleRTC	2.0
+com.apple.driver.AppleHPET	1.8
+com.apple.driver.AppleSMBIOS	2.1
+com.apple.driver.AppleACPIEC	4.0
+com.apple.driver.AppleAPIC	1.7
+com.apple.nke.applicationfirewall	163
+com.apple.security.quarantine	3
+com.apple.security.TMSafetyNet	8
+com.apple.kext.triggers	1.0
+com.apple.driver.DspFuncLib	274.7
+com.apple.kext.OSvKernDSPLib	525
+com.apple.driver.CoreCaptureResponder	1
+com.apple.driver.AppleGraphicsControl	3.12.6
+com.apple.iokit.IOSurface	108.2.1
+com.apple.AppleGraphicsDeviceControl	3.12.6
+com.apple.iokit.IOAcceleratorFamily2	205.3
+com.apple.driver.AppleHDAController	274.7
+com.apple.iokit.IOHDAFamily	274.7
+com.apple.iokit.IOAudioFamily	204.3
+com.apple.vecLib.kext	1.2.0
+com.apple.driver.AppleSMBusPCI	1.0.14d1
+com.apple.driver.AppleIntelLpssUARTCommon	2.0.60
+com.apple.driver.IOPlatformPluginLegacy	1.0.0
+com.apple.driver.X86PlatformPlugin	1.0.0
+com.apple.driver.IOPlatformPluginFamily	6.0.0d7
+com.apple.driver.AppleIntelLpssUART	2.0.59
+com.apple.iokit.IOSerialFamily	11
+com.apple.iokit.IOBluetoothHostControllerUSBTransport	4.4.4f4
+com.apple.iokit.IOBluetoothFamily	4.4.4f4
+com.apple.iokit.IOSlowAdaptiveClockingFamily	1.0.0
+com.apple.driver.AppleBacklightExpert	1.1.0
+com.apple.iokit.IONDRVSupport	2.4.1
+com.apple.driver.AppleSMC	3.1.9
+com.apple.driver.AppleSMBusController	1.0.14d1
+com.apple.iokit.IOGraphicsFamily	2.4.1
+com.apple.iokit.IOUSBMassStorageClass	4.0.2
+com.apple.iokit.IOSCSIBlockCommandsDevice	3.7.7
+com.apple.iokit.IOUSBMassStorageDriver	1.0.0
+com.apple.iokit.IOSCSIArchitectureModelFamily	3.7.7
+com.apple.driver.usb.AppleUSBHub	1.0.1
+com.apple.driver.usb.IOUSBHostHIDDevice	1.0.1
+com.apple.driver.usb.cdc	5.0.0
+com.apple.driver.usb.networking	5.0.0
+com.apple.driver.usb.AppleUSBHostCompositeDevice	1.0.1
+com.apple.driver.CoreStorage	517.20.1
+com.apple.driver.AppleUSBMergeNub	900.4.1
+com.apple.driver.AppleMultitouchDriver	304.10.2
+com.apple.driver.AppleHIDTransport	5
+com.apple.driver.AppleHIDKeyboard	181
+com.apple.driver.AppleHSSPIHIDDriver	43
+com.apple.driver.AppleXsanScheme	3
+com.apple.iokit.IOAHCIFamily	2.8.1
+com.apple.iokit.IO80211Family	1110.26
+com.apple.driver.mDNSOffloadUserClient	1.0.1b8
+com.apple.iokit.IONetworkingFamily	3.2
+com.apple.driver.corecapture	1.0.4
+com.apple.driver.AppleHSSPISupport	43
+com.apple.driver.AppleIntelLpssSpiController	2.0.60
+com.apple.driver.AppleIntelLpssI2C	2.0.60
+com.apple.driver.AppleIntelLpssGspi	2.0.60
+com.apple.driver.AppleIntelLpssDmac	2.0.60
+com.apple.driver.usb.AppleUSBXHCIPCI	1.0.1
+com.apple.driver.usb.AppleUSBXHCI	1.0.1
+com.apple.iokit.IOUSBFamily	900.4.1
+com.apple.iokit.IOUSBHostFamily	1.0.1
+com.apple.driver.AppleUSBHostMergeProperties	1.0.1
+com.apple.driver.AppleEFINVRAM	2.0
+com.apple.driver.AppleEFIRuntime	2.0
+com.apple.iokit.IOHIDFamily	2.0.0
+com.apple.iokit.IOSMBusFamily	1.1
+com.apple.security.sandbox	300.0
+com.apple.kext.AppleMatch	1.0.0d1
+com.apple.driver.AppleKeyStore	2
+com.apple.driver.AppleMobileFileIntegrity	1.0.5
+com.apple.driver.AppleCredentialManager	1.0
+com.apple.driver.DiskImages	417.2
+com.apple.iokit.IOStorageFamily	2.1
+com.apple.iokit.IOReportFamily	31
+com.apple.driver.AppleFDEKeyStore	28.30
+com.apple.driver.AppleACPIPlatform	4.0
+com.apple.iokit.IOPCIFamily	2.9
+com.apple.iokit.IOACPIFamily	1.4
+com.apple.kec.Libm	1
+com.apple.kec.pthread	1
+com.apple.kec.corecrypto	1.0
