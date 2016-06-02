@@ -1,6 +1,6 @@
 ##Interesting Integer overflow in enum comparison IOHIDDevice::handleReportWithTime in 10.11.4
 
-By flanker from KeenLab.
+By flanker from KeenLab, found at Jan 2016.
 
 There exists a signed integer comparison overflow in `IOHIDDevice::_getReport` and then `handleReportWithTime`, which can lead to oob access/execute in `handleReportWithTime`. A normal process can leverage this vulnerability to archive potential code execution in kernel and escalate privilege.
 
@@ -189,6 +189,7 @@ KitLib Python POC Code:
 Tested on macmini/macbooks with usb keyboard connected (for this specific IOUSBHIDDevice service). Of course other services extending IOHIDDevice can also be affected. Other models can also apply with configuration parameter tunned.
 Changing the first parameter to like 0x8000ffff and we can observe that the fault address has changed correspondingly, showing the possibility of exploitation.
 
-##Fix advice
-add check on reportType for negative, only accept positive value. Fixed in 10.11.5 by replacing jg with ja.
+##Fix advice and status
+add check on reportType for negative, only accept positive value. 
+This is fixed in 10.11.5 by replacing jg with ja.
 
