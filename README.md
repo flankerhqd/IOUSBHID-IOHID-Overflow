@@ -193,3 +193,6 @@ Changing the first parameter to like 0x8000ffff and we can observe that the faul
 add check on reportType for negative, only accept positive value. 
 This is fixed in 10.11.5 by replacing jg with ja.
 
+![BinDiff](__ZN11IOHIDDevice20handleReportWithTimeEyP18IOMemoryDescriptor15IOHIDReportTypej.png)
+
+(Graph made in BinDiff by David Manouchehri.)
